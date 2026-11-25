@@ -1,0 +1,23 @@
+{
+  "reference_date": "2026-12-05",
+  "latest_unambiguous_date": "2026-06-30",
+  "reference_extension_days": 158,
+  "assumption_only_tail_rows": 52,
+  "source_checked_on": "2026-11-25",
+  "reference_after_source_check": true,
+  "eligible_transactions": 5700,
+  "customers": 2823,
+  "estimated_amount_usd": 675801.91775,
+  "iqr_price_outliers": 200,
+  "iqr_price_lower": -76.91875,
+  "iqr_price_upper": 186.57125000000002,
+  "price_mean_before": 61.4828350877193,
+  "price_mean_clipped": 60.384357894736844,
+  "monetary_definition_segment_changed": 8,
+  "monetary_definition_segment_changed_pct": 0.28338646829613884,
+  "eligible_discount_imputed": 353,
+  "excluded_customers": 551,
+  "image_features_complete": true,
+  "dates_review_held": 1482,
+  "date_sensitivity_same_transactions": true
+}
