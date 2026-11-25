@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+#*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+ENV/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.git
+test.md
+.env
+.env.*
+!.env.example
+/tests/
+
+# 로컬 코드 학습 문서
+/docs/code_guide.md
+
+# 프로젝트 전용 Python 설치 및 이전 가상환경 백업
+/.tools/
+/.venv-backup.*/
