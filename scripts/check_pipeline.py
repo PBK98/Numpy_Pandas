@@ -117,7 +117,9 @@ class PipelineChecks(unittest.TestCase):
             '--input',str(a.data_path),'--output-dir',str(folder/'cli')],
             capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertTrue((folder/'cli/transactions_cleaned.csv').is_file())
+        self.assertEqual(result.stdout,'')
+        for filename in ['transactions_cleaned.csv', 'review_required.csv', 'preprocessing_summary.json']:
+            self.assertTrue((folder/'cli'/filename).is_file())
 
     def test_real_data_invariants(self):
         path=ROOT/'dataset/raw/csv/ecommerce_retail_transactions_raw.csv'
