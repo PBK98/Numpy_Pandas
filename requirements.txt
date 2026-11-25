@@ -1,6 +1,8 @@
 # 분석 라이브러리
 numpy==2.5.5
 pandas==3.1.1
+matplotlib==3.11.2
+seaborn==0.13.2
 
 # 노트북 표시 및 실행 도구
 ipykernel==7.4.0
