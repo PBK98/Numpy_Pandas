@@ -25,3 +25,6 @@ test.md
 # 프로젝트 전용 Python 설치 및 이전 가상환경 백업
 /.tools/
 /.venv-backup.*/
+
+# Claude 교차 검증 리뷰 결과
+/.review/
