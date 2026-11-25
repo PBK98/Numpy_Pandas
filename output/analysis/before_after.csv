@@ -1,0 +1,5 @@
+metric,raw_rows_basis,deduplicated_rows_basis
+rows,12180,12000
+missing_discount,735,0
+missing_city,502,0
+missing_rating,6150,6056
