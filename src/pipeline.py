@@ -250,7 +250,7 @@ class DataAnalyzer:
         return self.df.loc[values.lt(q1 - threshold * iqr) | values.gt(q3 + threshold * iqr)].copy()
 
     def calculate_rfm(self, reference_date=None):
-        """분석 대상 거래의 R/F/M 원시 지표. 점수·세그먼트는 후속 단계."""
+        """분석 대상 거래의 R/F/M 원시 지표. score_rfm()으로 점수와 고객군을 추가한다."""
         d = self.df.loc[self.df['analysis_eligible']]
         if d.empty:
             return pd.DataFrame(columns=['customer_id', 'Recency', 'Frequency', 'Monetary'])
@@ -261,6 +261,74 @@ class DataAnalyzer:
             Frequency=('order_id', 'nunique'), Monetary=('amount_estimated_usd', 'sum'))
         rfm['Recency'] = (reference - rfm.pop('last_order')).dt.days
         return rfm.reset_index()[['customer_id', 'Recency', 'Frequency', 'Monetary']]
+
+    def engineer_features(self, mapping_path=ROOT / 'dataset/raw/images/image_mapping.csv', image_size=64):
+        """파일 로드·크기 정규화만 순회하고, 이미지 통계는 배치 NumPy 연산한다."""
+        from matplotlib.image import imread
+        if image_size < 2:
+            raise ValueError('image_size는 2 이상이어야 합니다.')
+        mapping = pd.read_csv(mapping_path, dtype='string')
+        mapping['Product_Name'] = mapping['Product_Name'].str.strip()
+        if mapping['Product_Name'].isna().any() or mapping['Product_Name'].duplicated().any():
+            raise ValueError('이미지 매핑 상품명은 누락·중복이 없어야 합니다.')
+        arrays, names, paths = [], [], []
+        for row in mapping.itertuples(index=False):
+            path = (ROOT / row.image_path).resolve()
+            if not path.is_relative_to((ROOT / 'dataset/raw/images').resolve()) or not path.is_file():
+                raise ValueError(f'허용 범위 밖 또는 누락 이미지: {row.image_path}')
+            image = imread(path)
+            if image.dtype.kind in 'ui':
+                image = image.astype(np.float32) / np.iinfo(image.dtype).max
+            if image.ndim == 2:
+                image = np.repeat(image[..., None], 3, axis=2)
+            if image.shape[-1] == 4:
+                image = image[..., :3] * image[..., 3:] + (1 - image[..., 3:])
+            if image.ndim != 3 or image.shape[-1] != 3:
+                raise ValueError(f'지원하지 않는 이미지 형태: {image.shape}')
+            h, w = image.shape[:2]
+            scale = image_size / max(h, w)
+            nh, nw = max(1, round(h * scale)), max(1, round(w * scale))
+            # NumPy 인덱싱으로 다운샘플링하고 흰 패딩으로 종횡비를 보존한다.
+            sampled = image[np.linspace(0, h - 1, nh).astype(int)[:, None],
+                            np.linspace(0, w - 1, nw).astype(int)[None, :]]
+            canvas = np.ones((image_size, image_size, 3), dtype=np.float32)
+            y, x = (image_size - nh) // 2, (image_size - nw) // 2
+            canvas[y:y+nh, x:x+nw] = sampled
+            arrays.append(canvas)
+            names.append(row.Product_Name)
+            paths.append(row.image_path)
+        if not arrays:
+            raise ValueError('이미지 매핑이 비어 있습니다.')
+        batch = np.stack(arrays)
+        features = pd.DataFrame({'product_name': names, 'image_path': paths,
+            'image_mean': batch.mean(axis=(1, 2, 3)),
+            'image_std': batch.std(axis=(1, 2, 3))})
+        lookup = features.set_index('product_name')
+        for col in ['image_path', 'image_mean', 'image_std']:
+            self.df[col] = self.df['product_name'].map(lookup[col])
+        self.df['product_name_length'] = self.df['product_name'].str.len().astype('Int64')
+        self.df['product_word_count'] = self.df['product_name'].str.split().str.len().astype('Int64')
+        return features
+
+    @staticmethod
+    def score_rfm(rfm):
+        """동점은 같은 점수로 유지한다. 고객 ID 순서로 동점을 깨지 않는다."""
+        result = rfm.copy()
+        if result.empty:
+            for col in ['R_score', 'F_score', 'M_score', 'RFM_score', 'segment']:
+                result[col] = pd.Series(dtype='string' if col == 'segment' else 'int64')
+            return result
+        result['R_score'] = np.ceil(result['Recency'].rank(method='average', ascending=False, pct=True) * 4).clip(1, 4).astype(int)
+        result['F_score'] = result['Frequency'].clip(upper=4).astype(int)
+        result['M_score'] = np.ceil(result['Monetary'].rank(method='average', pct=True) * 4).clip(1, 4).astype(int)
+        result['RFM_score'] = result[['R_score', 'F_score', 'M_score']].sum(axis=1)
+        result['segment'] = np.select([
+            result.R_score.ge(3) & result.F_score.ge(3) & result.M_score.ge(3),
+            result.F_score.ge(3),
+            result.R_score.ge(3) & result.Frequency.eq(1),
+            result.R_score.le(2) & result.Frequency.ge(2),
+        ], ['VIP', 'Loyal', 'New', 'At_Risk'], default='Other')
+        return result
 
     def preprocess(self):
         self.load_data()
