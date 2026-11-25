@@ -1,0 +1,42 @@
+Product_Name,image_path,image_source
+Action Figure,dataset/raw/images/action_figure.png,AI-generated representative sketch
+Air Fryer,dataset/raw/images/air_fryer.png,AI-generated representative sketch
+Almonds 500g,dataset/raw/images/almonds_500g.png,AI-generated representative sketch
+Backpack,dataset/raw/images/backpack.png,AI-generated representative sketch
+Basmati Rice 5kg,dataset/raw/images/basmati_rice_5kg.png,AI-generated representative sketch
+Blender,dataset/raw/images/blender.png,AI-generated representative sketch
+Bluetooth Speaker,dataset/raw/images/bluetooth_speaker.png,AI-generated representative sketch
+Building Blocks Set,dataset/raw/images/building_blocks_set.png,AI-generated representative sketch
+Ceramic Mug Set,dataset/raw/images/ceramic_mug_set.png,AI-generated representative sketch
+Cookbook,dataset/raw/images/cookbook.png,AI-generated representative sketch
+Cotton T-Shirt,dataset/raw/images/cotton_t_shirt.png,AI-generated representative sketch
+Cricket Bat,dataset/raw/images/cricket_bat.png,AI-generated representative sketch
+Cycling Helmet,dataset/raw/images/cycling_helmet.png,AI-generated representative sketch
+Dumbbell Set,dataset/raw/images/dumbbell_set.png,AI-generated representative sketch
+Face Moisturizer,dataset/raw/images/face_moisturizer.png,AI-generated representative sketch
+Fiction Novel,dataset/raw/images/fiction_novel.png,AI-generated representative sketch
+Football,dataset/raw/images/football.png,AI-generated representative sketch
+Formal Shirt,dataset/raw/images/formal_shirt.png,AI-generated representative sketch
+Gaming Mouse,dataset/raw/images/gaming_mouse.png,AI-generated representative sketch
+Green Tea Pack,dataset/raw/images/green_tea_pack.png,AI-generated representative sketch
+Hair Dryer,dataset/raw/images/hair_dryer.png,AI-generated representative sketch
+Kids Storybook,dataset/raw/images/kids_storybook.png,AI-generated representative sketch
+Laptop Stand,dataset/raw/images/laptop_stand.png,AI-generated representative sketch
+Leather Wallet,dataset/raw/images/leather_wallet.png,AI-generated representative sketch
+Lipstick,dataset/raw/images/lipstick.png,AI-generated representative sketch
+Non-Stick Pan,dataset/raw/images/non_stick_pan.png,AI-generated representative sketch
+Olive Oil 1L,dataset/raw/images/olive_oil_1l.png,AI-generated representative sketch
+Perfume,dataset/raw/images/perfume.png,AI-generated representative sketch
+Puzzle 1000pc,dataset/raw/images/puzzle_1000pc.png,AI-generated representative sketch
+Remote Control Car,dataset/raw/images/remote_control_car.png,AI-generated representative sketch
+Running Shoes,dataset/raw/images/running_shoes.png,AI-generated representative sketch
+Self-Help Book,dataset/raw/images/self_help_book.png,AI-generated representative sketch
+Shampoo,dataset/raw/images/shampoo.png,AI-generated representative sketch
+Smartwatch,dataset/raw/images/smartwatch.png,AI-generated representative sketch
+Storage Organizer,dataset/raw/images/storage_organizer.png,AI-generated representative sketch
+Sunglasses,dataset/raw/images/sunglasses.png,AI-generated representative sketch
+Sunscreen SPF50,dataset/raw/images/sunscreen_spf50.png,AI-generated representative sketch
+Vacuum Cleaner,dataset/raw/images/vacuum_cleaner.png,AI-generated representative sketch
+Webcam,dataset/raw/images/webcam.png,AI-generated representative sketch
+Wireless Earbuds,dataset/raw/images/wireless_earbuds.png,AI-generated representative sketch
+Yoga Mat,dataset/raw/images/yoga_mat.png,AI-generated representative sketch
