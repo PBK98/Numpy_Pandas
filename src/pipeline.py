@@ -308,9 +308,7 @@ def main():
     args = parser.parse_args()
     analyzer = DataAnalyzer(args.input)
     analyzer.preprocess()
-    for path in analyzer.save_results(args.output_dir):
-        print(path)
-    print(json.dumps(analyzer.summary, ensure_ascii=False, indent=2))
+    analyzer.save_results(args.output_dir)
 
 
 if __name__ == '__main__':
