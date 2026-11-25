@@ -1,0 +1,47 @@
+product_name,image_path,image_mean,image_std
+Action Figure,dataset/raw/images/action_figure.png,0.9588992,0.17846195
+Air Fryer,dataset/raw/images/air_fryer.png,0.95465374,0.19428803
+Almonds 500g,dataset/raw/images/almonds_500g.png,0.9285779,0.22874777
+Backpack,dataset/raw/images/backpack.png,0.94792247,0.20323414
+Basmati Rice 5kg,dataset/raw/images/basmati_rice_5kg.png,0.97677,0.13633019
+Blender,dataset/raw/images/blender.png,0.95712036,0.19016115
+Bluetooth Speaker,dataset/raw/images/bluetooth_speaker.png,0.9694834,0.16218522
+Building Blocks Set,dataset/raw/images/building_blocks_set.png,0.9640472,0.17250769
+Ceramic Mug Set,dataset/raw/images/ceramic_mug_set.png,0.97188044,0.15194169
+Cookbook,dataset/raw/images/cookbook.png,0.94492036,0.21396306
+Cotton T-Shirt,dataset/raw/images/cotton_t_shirt.png,0.9792616,0.123891026
+Cricket Bat,dataset/raw/images/cricket_bat.png,0.98961335,0.09004138
+Cycling Helmet,dataset/raw/images/cycling_helmet.png,0.9587342,0.18585293
+Denim Jacket,dataset/raw/images/denim_jacket.png,0.9384737,0.21873705
+Dumbbell Set,dataset/raw/images/dumbbell_set.png,0.9483039,0.20521268
+Face Moisturizer,dataset/raw/images/face_moisturizer.png,0.97260714,0.1481558
+Fiction Novel,dataset/raw/images/fiction_novel.png,0.98008996,0.12701589
+Football,dataset/raw/images/football.png,0.9538776,0.20066997
+Formal Shirt,dataset/raw/images/formal_shirt.png,0.9684284,0.15647097
+Gaming Mouse,dataset/raw/images/gaming_mouse.png,0.96917224,0.15721245
+Green Tea Pack,dataset/raw/images/green_tea_pack.png,0.96790886,0.16235352
+Hair Dryer,dataset/raw/images/hair_dryer.png,0.9783902,0.13412951
+Hoodie,dataset/raw/images/hoodie.png,0.9616272,0.17583916
+Kids Storybook,dataset/raw/images/kids_storybook.png,0.95604134,0.1932196
+LED Desk Lamp,dataset/raw/images/led_desk_lamp.png,0.98139936,0.11006543
+Laptop Stand,dataset/raw/images/laptop_stand.png,0.9803319,0.12189276
+Leather Wallet,dataset/raw/images/leather_wallet.png,0.97129554,0.15379441
+Lipstick,dataset/raw/images/lipstick.png,0.9834773,0.11525177
+Non-Stick Pan,dataset/raw/images/non_stick_pan.png,0.9807222,0.12478256
+Olive Oil 1L,dataset/raw/images/olive_oil_1l.png,0.9876539,0.098718025
+Perfume,dataset/raw/images/perfume.png,0.97213006,0.14138694
+Power Bank,dataset/raw/images/power_bank.png,0.99115324,0.07922809
+Puzzle 1000pc,dataset/raw/images/puzzle_1000pc.png,0.9505984,0.19373521
+Remote Control Car,dataset/raw/images/remote_control_car.png,0.9397998,0.22263148
+Running Shoes,dataset/raw/images/running_shoes.png,0.9529071,0.19771121
+Self-Help Book,dataset/raw/images/self_help_book.png,0.98219275,0.115989335
+Shampoo,dataset/raw/images/shampoo.png,0.98129344,0.1223439
+Smartwatch,dataset/raw/images/smartwatch.png,0.96704143,0.16447067
+Storage Organizer,dataset/raw/images/storage_organizer.png,0.950084,0.20120695
+Sunglasses,dataset/raw/images/sunglasses.png,0.9663951,0.17074913
+Sunscreen SPF50,dataset/raw/images/sunscreen_spf50.png,0.96862173,0.16359979
+USB-C Cable,dataset/raw/images/usb_c_cable.png,0.9725998,0.14864272
+Vacuum Cleaner,dataset/raw/images/vacuum_cleaner.png,0.95701855,0.18997847
+Webcam,dataset/raw/images/webcam.png,0.9775912,0.13578641
+Wireless Earbuds,dataset/raw/images/wireless_earbuds.png,0.95047015,0.19911972
+Yoga Mat,dataset/raw/images/yoga_mat.png,0.9778304,0.13449813
