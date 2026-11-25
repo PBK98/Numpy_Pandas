@@ -92,6 +92,8 @@ python3.14 -m venv .venv
 .venv/bin/python src/pipeline.py
 ```
 
+정상 실행 시 터미널에는 출력하지 않고 결과 파일 3개를 저장합니다. 실행 오류는 터미널에 표시됩니다.
+
 입력·출력 경로를 지정할 수도 있습니다.
 
 ```bash
