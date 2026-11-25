@@ -1,0 +1,216 @@
+{
+  "input_rows": 12180,
+  "duplicates_removed": 180,
+  "country_separator_date_patterns": [
+    {
+      "country": "Australia",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 126
+    },
+    {
+      "country": "Australia",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 199
+    },
+    {
+      "country": "Australia",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 135
+    },
+    {
+      "country": "Australia",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 191
+    },
+    {
+      "country": "Canada",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 140
+    },
+    {
+      "country": "Canada",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 193
+    },
+    {
+      "country": "Canada",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 141
+    },
+    {
+      "country": "Canada",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 194
+    },
+    {
+      "country": "Germany",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 149
+    },
+    {
+      "country": "Germany",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 207
+    },
+    {
+      "country": "Germany",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 131
+    },
+    {
+      "country": "Germany",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 211
+    },
+    {
+      "country": "India",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 144
+    },
+    {
+      "country": "India",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 204
+    },
+    {
+      "country": "India",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 132
+    },
+    {
+      "country": "India",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 216
+    },
+    {
+      "country": "UAE",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 137
+    },
+    {
+      "country": "UAE",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 205
+    },
+    {
+      "country": "UAE",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 133
+    },
+    {
+      "country": "UAE",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 224
+    },
+    {
+      "country": "UK",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 148
+    },
+    {
+      "country": "UK",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 250
+    },
+    {
+      "country": "UK",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 135
+    },
+    {
+      "country": "UK",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 187
+    },
+    {
+      "country": "USA",
+      "separator": "-",
+      "interpretation": "both",
+      "rows": 143
+    },
+    {
+      "country": "USA",
+      "separator": "-",
+      "interpretation": "mdy_only",
+      "rows": 209
+    },
+    {
+      "country": "USA",
+      "separator": "/",
+      "interpretation": "both",
+      "rows": 139
+    },
+    {
+      "country": "USA",
+      "separator": "/",
+      "interpretation": "dmy_only",
+      "rows": 224
+    }
+  ],
+  "cleaned_rows": 12000,
+  "review_items": 1668,
+  "review_rows": 1653,
+  "analysis_eligible_rows": 5700,
+  "analysis_excluded_rows": 6300,
+  "analysis_eligible_customers": 2823,
+  "date_status_counts": {
+    "explicit": 7153,
+    "country_assumed": 1777,
+    "country_format_conflict": 1482,
+    "unambiguous_numeric": 1432,
+    "same_day_month": 156
+  },
+  "discount_fill_counts": {
+    "observed": 11278,
+    "product_median": 722
+  },
+  "city_filled_rows": 494,
+  "eligible_rows_by_order_status": {
+    "Cancelled": {
+      "size": 1196,
+      "sum": 0
+    },
+    "Delivered": {
+      "size": 6578,
+      "sum": 5700
+    },
+    "Pending": {
+      "size": 1395,
+      "sum": 0
+    },
+    "Returned": {
+      "size": 1015,
+      "sum": 0
+    },
+    "Shipped": {
+      "size": 1816,
+      "sum": 0
+    }
+  },
+  "count_basis": "중복 제거 후 기준. review_items는 한 거래의 여러 확인 항목을 포함할 수 있음.",
+  "date_policy": "USA=MDY; UK/Canada/Australia/Germany/India/UAE=DMY; conflicts held for review"
+}
